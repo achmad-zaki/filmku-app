@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Mulish:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply scroll-smooth
+    }
+    body {
+        @apply font-mulish bg-dark text-white
+    }
+    h1 {
+        @apply tracking-[0.32px] font-merriweather font-black
+    }
+    h3 {
+        @apply tracking-[0.28px] font-bold
+    }
+    p {
+        @apply tracking-[0.24px]
+    }
+}
+
+@layer utilities {
+    .tag-bullet {
+        @apply bg-gray-800 px-3 py-1 rounded-full
+    }
+}
+
+.previous.disabled {
+    color: #67686D;
+    cursor: none;
+}
+
+.next.disabled {
+    color: #67686D;
+    cursor: none;
+}
