@@ -1,14 +1,14 @@
 import Header from '../Header'
 import Navigation from '../Navigation'
 
-const Layout = ({ children, showHeader = true }) => {
+const Layout = ({ children, header = true }) => {
   return (
     <>
-        {showHeader && <Header />}
-          <div className='py-28 container mx-auto px-4'>
-            {children}
-          </div>
-        <Navigation />
+      {header ? <Header /> : null}
+      <div className='py-28 container mx-auto px-4'>
+        {children}
+      </div>
+      <Navigation />
     </>
   )
 }

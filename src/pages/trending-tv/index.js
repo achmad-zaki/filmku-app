@@ -65,6 +65,7 @@ const TrendingTv = () => {
           <CardList
             key={index}
             image={item.poster_path ? `${img_500}${item.poster_path}` : imgUnavailable}
+            alt="tvseries image"
             rating={item.vote_average}
             onClick={() => openModal(item.id)}
           />
@@ -72,6 +73,7 @@ const TrendingTv = () => {
       </div>
       <CardModal
         src={`${img_500}${dataModalTv.backdrop_path}`}
+        alt="tvseries image"
         title={dataModalTv.name}
         overview={dataModalTv.overview}
         show={isOpenModal}

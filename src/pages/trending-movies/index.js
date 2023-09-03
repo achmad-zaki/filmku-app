@@ -64,6 +64,7 @@ const TrendingMovies = () => {
           <CardList
             key={index}
             image={item.poster_path ? `${img_500}${item.poster_path}` : imgUnavailable}
+            alt="movie image"
             rating={item.vote_average}
             onClick={() => openModal(item.id)}
           />
@@ -71,6 +72,7 @@ const TrendingMovies = () => {
       </div>
       <CardModal
         src={`${img_500}${openModalMovie.backdrop_path}`}
+        alt="movie image"
         title={openModalMovie.title}
         overview={openModalMovie.overview}
         show={isOpenModal}

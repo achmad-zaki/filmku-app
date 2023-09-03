@@ -39,6 +39,7 @@ const AllTvSeriesDetail = () => {
                 setReleaseDate(first_air_date.slice(0, 4))
                 setKeyVideo(videos.results)
                 setTopCast(credits.cast)
+                console.log(videos.results.length === 0)
             } catch (error) {
                 console.log(error)
             }
@@ -85,9 +86,11 @@ const AllTvSeriesDetail = () => {
                                 <LuSearch size={25} />
                             </Link>
                         </div>
-                        <div className="absolute inset-0 z-20 flex items-center justify-center">
-                            <button onClick={() => setPlayVideo(true)} className="rounded-full bg-white p-4 z-20"><FaPlay className="text-dark" /></button>
-                        </div>
+                        {keyVideo.length > 0 &&
+                            <div className="absolute inset-0 z-20 flex items-center justify-center">
+                                <button onClick={() => setPlayVideo(true)} className="rounded-full bg-white p-4 z-20"><FaPlay className="text-dark" /></button>
+                            </div>
+                        }
                     </div>
                 }
             </>

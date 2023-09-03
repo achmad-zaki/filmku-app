@@ -10,7 +10,6 @@ const Home = () => {
   const [tvPopular, setTvPopular] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
     const getMoviesTrending = async () => {
       try {
         const { data } = await axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}`)
@@ -20,10 +19,6 @@ const Home = () => {
       }
     }
 
-    getMoviesTrending()
-  }, [])
-
-  useEffect(() => {
     const getTvPopular = async () => {
       try {
         const { data } = await axios.get(`
@@ -33,7 +28,9 @@ const Home = () => {
         console.log(err.message)
       }
     }
-
+    
+  useEffect(() => {
+    getMoviesTrending()
     getTvPopular()
   }, [])
 
